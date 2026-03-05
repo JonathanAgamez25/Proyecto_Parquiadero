@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockups — Parqueadero Autos Colombia</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A3A5C;
+    --blue: #2E6DA4;
+    --blue-light: #EAF2FB;
+    --accent: #3B9EE8;
+    --green: #27AE60;
+    --green-light: #EAFAF1;
+    --red: #E74C3C;
+    --red-light: #FDEDEC;
+    --orange: #F39C12;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #94A3B8;
+    --gray-600: #475569;
+    --gray-800: #1E293B;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(26,58,92,0.10);
+    --shadow-lg: 0 8px 40px rgba(26,58,92,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0F1B2D;
+    color: var(--gray-800);
+    min-height: 100vh;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, #0F1B2D 0%, #1A3A5C 100%);
+    padding: 48px 60px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .page-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+  .page-header p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+  }
+  .hu-pills {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .hu-pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.6);
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .hu-pill:hover, .hu-pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  /* ── SCREENS CONTAINER ── */
+  .screens {
+    padding: 48px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .screen-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .screen-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .screen-badge {
+    background: var(--accent);
+    color: white;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .screen-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+  }
+  .screen-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  /* ── MOCKUP FRAME ── */
+  .mockup-frame {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08), var(--shadow-lg);
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  /* ── APP NAVBAR ── */
+  .app-nav {
+    background: var(--navy);
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .app-nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .app-nav .brand-icon {
+    width: 32px; height: 32px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .app-nav .brand-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+  }
+  .app-nav .nav-links {
+    display: flex;
+    gap: 4px;
+  }
+  .app-nav .nav-link {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .app-nav .nav-link.active {
+    background: rgba(255,255,255,0.12);
+    color: white;
+  }
+  .app-nav .user-chip {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.1);
+    padding: 6px 14px 6px 8px;
+    border-radius: 20px;
+  }
+  .user-avatar {
+    width: 26px; height: 26px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: white;
+  }
+  .user-name { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  /* ── PAGE CONTENT ── */
+  .page-body {
+    background: var(--gray-50);
+    padding: 32px;
+    min-height: 520px;
+  }
+  .page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .page-subtitle {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-bottom: 28px;
+  }
+
+  /* ── FORM CARD ── */
+  .form-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    max-width: 560px;
+  }
+  .form-card-wide {
+    max-width: 100%;
+  }
+
+  .form-group { margin-bottom: 20px; }
+  .form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-800);
+    background: white;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus { border-color: var(--accent); }
+  .form-input.filled { border-color: var(--navy); background: var(--blue-light); font-weight: 600; }
+  .form-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-800);
+    background: white;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394A3B8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+  }
+
+  .btn {
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary { background: var(--navy); color: white; }
+  .btn-success { background: var(--green); color: white; }
+  .btn-danger { background: var(--red); color: white; }
+  .btn-outline { background: white; color: var(--navy); border: 1.5px solid var(--navy); }
+  .btn-secondary { background: var(--gray-100); color: var(--gray-600); }
+
+  /* ── SUCCESS ALERT ── */
+  .alert {
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .alert-success { background: var(--green-light); color: #1A6B3C; border: 1px solid #A9DFBF; }
+  .alert-error { background: var(--red-light); color: #922B21; border: 1px solid #F1948A; }
+  .alert-info { background: var(--blue-light); color: var(--navy); border: 1px solid #AED6F1; }
+
+  /* ── INFO CARD ── */
+  .info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    border: 1.5px solid var(--gray-200);
+    margin-top: 16px;
+    max-width: 560px;
+  }
+  .info-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .info-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-red { background: var(--red-light); color: var(--red); }
+  .badge-blue { background: var(--blue-light); color: var(--blue); }
+  .badge-orange { background: #FEF9E7; color: var(--orange); }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 13px;
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-key { color: var(--gray-400); }
+  .info-val { font-weight: 600; color: var(--gray-800); }
+
+  /* ── CELDA GRID ── */
+  .celdas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .stats-chips {
+    display: flex;
+    gap: 10px;
+  }
+  .stat-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .stat-chip .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .stat-chip.libre { background: var(--green-light); color: var(--green); }
+  .stat-chip.ocupado { background: var(--red-light); color: var(--red); }
+  .stat-chip .dot.verde { background: var(--green); }
+  .stat-chip .dot.rojo { background: var(--red); }
+
+  .celda-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+  }
+  .celda {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s;
+    position: relative;
+  }
+  .celda:hover { transform: scale(1.08); }
+  .celda.libre { background: var(--green-light); color: var(--green); border: 1.5px solid #A9DFBF; }
+  .celda.ocupado { background: var(--red-light); color: var(--red); border: 1.5px solid #F1948A; }
+  .celda .celda-num { font-size: 13px; }
+  .celda .celda-icon { font-size: 16px; margin-bottom: 2px; }
+
+  /* ── TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .data-table th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .data-table th:first-child { border-radius: 8px 0 0 0; }
+  .data-table th:last-child { border-radius: 0 8px 0 0; }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-800);
+  }
+  .data-table tr:nth-child(even) td { background: var(--gray-50); }
+  .data-table tr:hover td { background: var(--blue-light); }
+
+  /* ── FILTERS ── */
+  .filters-bar {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow);
+  }
+  .filter-group { display: flex; flex-direction: column; gap: 6px; }
+  .filter-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; }
+  .filter-input {
+    padding: 9px 14px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    min-width: 140px;
+  }
+
+  /* ── TWO COL LAYOUT ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* ── SEARCH BOX ── */
+  .search-box {
+    display: flex;
+    gap: 10px;
+    max-width: 480px;
+    margin-bottom: 24px;
+  }
+  .search-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-200);
+    margin: 20px 0;
+  }
+
+  .section-break {
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Mockups — Parqueadero Autos Colombia</h1>
+  <p>Iteración 1 · Gestión de Entrada y Salida de Vehículos · 5 Historias de Usuario</p>
+  <div class="hu-pills">
+    <a href="#hu01" class="hu-pill active">HU-01 Registro de Entrada</a>
+    <a href="#hu02" class="hu-pill">HU-02 Registro de Salida</a>
+    <a href="#hu03" class="hu-pill">HU-03 Consulta de Vehículo</a>
+    <a href="#hu04" class="hu-pill">HU-04 Mapa de Celdas</a>
+    <a href="#hu05" class="hu-pill">HU-05 Historial</a>
+  </div>
+</div>
+
+<div class="screens">
+
+  <!-- ══════════════════════════════════════════════════════
+       HU-01 REGISTRO DE ENTRADA
+  ══════════════════════════════════════════════════════ -->
+  <div class="screen-section" id="hu01">
+    <div class="screen-label">
+      <span class="screen-badge">HU-01</span>
+      <div>
+        <div class="screen-title">Registro de Entrada de Vehículo</div>
+        <div class="screen-desc">Como operario, quiero registrar la entrada de un vehículo para tener control de qué vehículos están dentro.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand">
+          <div class="brand-icon">🚗</div>
+          <span class="brand-name">Autos Colombia</span>
+        </div>
+        <div class="nav-links">
+          <div class="nav-link active">Entrada</div>
+          <div class="nav-link">Salida</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Historial</div>
+        </div>
+        <div class="user-chip">
+          <div class="user-avatar">OP</div>
+          <span class="user-name">Operario</span>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Registrar Entrada de Vehículo</div>
+        <div class="page-subtitle">Complete los datos del vehículo que ingresa al parqueadero</div>
+
+        <div class="two-col" style="max-width:780px">
+          <div class="form-card">
+            <div class="form-group">
+              <label class="form-label">Placa del Vehículo *</label>
+              <input class="form-input filled" type="text" value="ABC-123" placeholder="Ej: ABC-123">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo de Vehículo *</label>
+              <select class="form-select">
+                <option>🚗 Carro</option>
+                <option>🏍️ Moto</option>
+                <option>🚛 Camión</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Observación (opcional)</label>
+              <input class="form-input" type="text" placeholder="Ej: Vehículo con rayón en puerta izquierda">
+            </div>
+            <div style="display:flex; gap:10px; margin-top:8px">
+              <button class="btn btn-primary">✅ Registrar Entrada</button>
+              <button class="btn btn-secondary">Limpiar</button>
+            </div>
+            <div class="alert alert-success">
+              ✅ Entrada registrada — Celda asignada: <strong>B-07</strong> · 09:34 AM
+            </div>
+          </div>
+          <div>
+            <div class="info-card">
+              <div class="info-card-header">
+                <span class="info-card-title">Resumen de Entrada</span>
+                <span class="badge badge-green">● Registrado</span>
+              </div>
+              <div class="info-row"><span class="info-key">Placa</span><span class="info-val">ABC-123</span></div>
+              <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">🚗 Carro</span></div>
+              <div class="info-row"><span class="info-key">Celda asignada</span><span class="info-val">B-07</span></div>
+              <div class="info-row"><span class="info-key">Hora de entrada</span><span class="info-val">09:34 AM</span></div>
+              <div class="info-row"><span class="info-key">Fecha</span><span class="info-val">Hoy, 26 Feb 2025</span></div>
+              <div class="info-row"><span class="info-key">Operario</span><span class="info-val">Juan Pérez</span></div>
+            </div>
+            <div class="alert alert-info" style="max-width:100%; margin-top:12px">
+              ℹ️ Celdas disponibles para carros: <strong>23 de 30</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       HU-02 REGISTRO DE SALIDA
+  ══════════════════════════════════════════════════════ -->
+  <div class="screen-section" id="hu02">
+    <div class="screen-label">
+      <span class="screen-badge">HU-02</span>
+      <div>
+        <div class="screen-title">Registro de Salida de Vehículo</div>
+        <div class="screen-desc">Como operario, quiero registrar la salida de un vehículo para liberar la celda y actualizar el inventario.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand">
+          <div class="brand-icon">🚗</div>
+          <span class="brand-name">Autos Colombia</span>
+        </div>
+        <div class="nav-links">
+          <div class="nav-link">Entrada</div>
+          <div class="nav-link active">Salida</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Historial</div>
+        </div>
+        <div class="user-chip">
+          <div class="user-avatar">OP</div>
+          <span class="user-name">Operario</span>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Registrar Salida de Vehículo</div>
+        <div class="page-subtitle">Busque el vehículo por su placa para registrar la salida</div>
+
+        <div class="search-box">
+          <input class="search-input" type="text" value="XYZ-456" placeholder="Ingrese la placa del vehículo...">
+          <button class="btn btn-primary">🔍 Buscar</button>
+        </div>
+
+        <div class="two-col" style="max-width:780px">
+          <div class="info-card" style="margin-top:0">
+            <div class="info-card-header">
+              <span class="info-card-title">Vehículo Encontrado</span>
+              <span class="badge badge-orange">● Dentro</span>
+            </div>
+            <div class="info-row"><span class="info-key">Placa</span><span class="info-val">XYZ-456</span></div>
+            <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">🏍️ Moto</span></div>
+            <div class="info-row"><span class="info-key">Celda</span><span class="info-val">M-03</span></div>
+            <div class="info-row"><span class="info-key">Hora entrada</span><span class="info-val">07:15 AM</span></div>
+            <div class="info-row"><span class="info-key">Hora salida</span><span class="info-val">11:42 AM (ahora)</span></div>
+            <div class="info-row"><span class="info-key">Tiempo total</span><span class="info-val" style="color:var(--navy);font-size:16px">4h 27min</span></div>
+            <hr class="divider">
+            <div style="display:flex; gap:10px">
+              <button class="btn btn-danger">🚪 Confirmar Salida</button>
+              <button class="btn btn-outline">Cancelar</button>
+            </div>
+          </div>
+          <div>
+            <div class="alert alert-success" style="margin-top:0">
+              ✅ Salida registrada correctamente · Celda M-03 liberada
+            </div>
+            <div class="info-card" style="margin-top:12px">
+              <div class="info-card-title" style="margin-bottom:12px">Resumen de Permanencia</div>
+              <div class="info-row"><span class="info-key">Entrada</span><span class="info-val">07:15 AM</span></div>
+              <div class="info-row"><span class="info-key">Salida</span><span class="info-val">11:42 AM</span></div>
+              <div class="info-row"><span class="info-key">Duración</span><span class="info-val">4 horas 27 minutos</span></div>
+              <div class="info-row"><span class="info-key">Celda utilizada</span><span class="info-val">M-03 (Zona Motos)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       HU-03 CONSULTA DE VEHÍCULO
+  ══════════════════════════════════════════════════════ -->
+  <div class="screen-section" id="hu03">
+    <div class="screen-label">
+      <span class="screen-badge">HU-03</span>
+      <div>
+        <div class="screen-title">Consulta de Vehículo por Placa</div>
+        <div class="screen-desc">Como operario, quiero consultar si un vehículo está dentro del parqueadero y en qué celda se encuentra.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand">
+          <div class="brand-icon">🚗</div>
+          <span class="brand-name">Autos Colombia</span>
+        </div>
+        <div class="nav-links">
+          <div class="nav-link">Entrada</div>
+          <div class="nav-link">Salida</div>
+          <div class="nav-link active">Consultar</div>
+          <div class="nav-link">Historial</div>
+        </div>
+        <div class="user-chip">
+          <div class="user-avatar">AD</div>
+          <span class="user-name">Admin</span>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Consultar Vehículo</div>
+        <div class="page-subtitle">Verifique el estado actual de cualquier vehículo registrado</div>
+
+        <div class="search-box">
+          <input class="search-input" type="text" value="ABC-123" placeholder="Ingrese la placa...">
+          <button class="btn btn-primary">🔍 Consultar</button>
+        </div>
+
+        <div class="three-col" style="max-width:900px">
+          <div class="info-card" style="margin-top:0; border-top: 3px solid var(--green);">
+            <div class="info-card-header">
+              <span class="info-card-title">ABC-123</span>
+              <span class="badge badge-green">● Dentro</span>
+            </div>
+            <div style="font-size:36px; text-align:center; margin:12px 0">🚗</div>
+            <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">Carro</span></div>
+            <div class="info-row"><span class="info-key">Celda</span><span class="info-val" style="color:var(--navy);font-weight:700">B-07</span></div>
+            <div class="info-row"><span class="info-key">Entrada</span><span class="info-val">09:34 AM</span></div>
+            <div class="info-row"><span class="info-key">Tiempo</span><span class="info-val" style="color:var(--green);font-weight:700">2h 08min</span></div>
+          </div>
+          <div class="info-card" style="margin-top:0; border-top: 3px solid var(--red);">
+            <div class="info-card-header">
+              <span class="info-card-title">DEF-789</span>
+              <span class="badge badge-red">● Fuera</span>
+            </div>
+            <div style="font-size:36px; text-align:center; margin:12px 0">🏍️</div>
+            <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">Moto</span></div>
+            <div class="info-row"><span class="info-key">Última celda</span><span class="info-val">M-02</span></div>
+            <div class="info-row"><span class="info-key">Última salida</span><span class="info-val">Ayer 06:15 PM</span></div>
+            <div class="info-row"><span class="info-key">Estado</span><span class="info-val" style="color:var(--red)">No está en parqueadero</span></div>
+          </div>
+          <div class="info-card" style="margin-top:0; border-top: 3px solid var(--gray-200);">
+            <div class="info-card-header">
+              <span class="info-card-title">GHI-000</span>
+              <span class="badge" style="background:var(--gray-100);color:var(--gray-400)">No registrado</span>
+            </div>
+            <div style="font-size:36px; text-align:center; margin:12px 0">❓</div>
+            <div class="alert alert-error" style="margin-top:0; font-size:12px">
+              ⚠️ Vehículo no encontrado en el sistema
+            </div>
+            <div style="font-size:12px; color:var(--gray-400); text-align:center; margin-top:12px">Verifique la placa ingresada o registre el vehículo primero.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       HU-04 MAPA DE CELDAS
+  ══════════════════════════════════════════════════════ -->
+  <div class="screen-section" id="hu04">
+    <div class="screen-label">
+      <span class="screen-badge">HU-04</span>
+      <div>
+        <div class="screen-title">Mapa Visual de Celdas</div>
+        <div class="screen-desc">Como operario, quiero ver el estado de todas las celdas para identificar espacios libres rápidamente.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand">
+          <div class="brand-icon">🚗</div>
+          <span class="brand-name">Autos Colombia</span>
+        </div>
+        <div class="nav-links">
+          <div class="nav-link">Entrada</div>
+          <div class="nav-link">Salida</div>
+          <div class="nav-link active">Celdas</div>
+          <div class="nav-link">Historial</div>
+        </div>
+        <div class="user-chip">
+          <div class="user-avatar">OP</div>
+          <span class="user-name">Operario</span>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="celdas-header">
+          <div>
+            <div class="page-title">Mapa de Celdas</div>
+            <div class="page-subtitle">Actualizado en tiempo real · Haga clic en una celda para ver detalles</div>
+          </div>
+          <div class="stats-chips">
+            <div class="stat-chip libre"><div class="dot verde"></div>23 Libres</div>
+            <div class="stat-chip ocupado"><div class="dot rojo"></div>17 Ocupadas</div>
+          </div>
+        </div>
+
+        <div style="background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-200); box-shadow:var(--shadow)">
+          <div style="font-size:12px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px">Zona A — Carros</div>
+          <div class="celda-grid" style="grid-template-columns:repeat(10,1fr); margin-bottom:20px">
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">A-01</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">A-02</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">A-03</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">A-04</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">A-05</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">A-06</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">A-07</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">A-08</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">A-09</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">A-10</div></div>
+          </div>
+
+          <div style="font-size:12px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px">Zona B — Carros</div>
+          <div class="celda-grid" style="grid-template-columns:repeat(10,1fr); margin-bottom:20px">
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">B-01</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">B-02</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">B-03</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">B-04</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">B-05</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">B-06</div></div>
+            <div class="celda ocupado" style="border:2px solid var(--navy)"><div class="celda-icon">🚗</div><div class="celda-num">B-07</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">B-08</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🚗</div><div class="celda-num">B-09</div></div>
+            <div class="celda libre"><div class="celda-icon">🚗</div><div class="celda-num">B-10</div></div>
+          </div>
+
+          <div style="font-size:12px; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px">Zona M — Motos</div>
+          <div class="celda-grid" style="grid-template-columns:repeat(10,1fr)">
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-01</div></div>
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-02</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🏍️</div><div class="celda-num">M-03</div></div>
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-04</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🏍️</div><div class="celda-num">M-05</div></div>
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-06</div></div>
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-07</div></div>
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-08</div></div>
+            <div class="celda ocupado"><div class="celda-icon">🏍️</div><div class="celda-num">M-09</div></div>
+            <div class="celda libre"><div class="celda-icon">🏍️</div><div class="celda-num">M-10</div></div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:16px; margin-top:16px; font-size:12px; color:var(--gray-400); align-items:center">
+          <div style="display:flex;align-items:center;gap:6px"><div style="width:14px;height:14px;background:var(--green-light);border:1.5px solid #A9DFBF;border-radius:4px"></div> Libre — clic para asignar</div>
+          <div style="display:flex;align-items:center;gap:6px"><div style="width:14px;height:14px;background:var(--red-light);border:1.5px solid #F1948A;border-radius:4px"></div> Ocupado — clic para ver vehículo</div>
+          <div style="display:flex;align-items:center;gap:6px"><div style="width:14px;height:14px;background:var(--red-light);border:2px solid var(--navy);border-radius:4px"></div> Seleccionado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       HU-05 HISTORIAL DE MOVIMIENTOS
+  ══════════════════════════════════════════════════════ -->
+  <div class="screen-section" id="hu05">
+    <div class="screen-label">
+      <span class="screen-badge">HU-05</span>
+      <div>
+        <div class="screen-title">Historial de Movimientos</div>
+        <div class="screen-desc">Como administrador, quiero consultar el historial de entradas y salidas para auditar las operaciones diarias.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand">
+          <div class="brand-icon">🚗</div>
+          <span class="brand-name">Autos Colombia</span>
+        </div>
+        <div class="nav-links">
+          <div class="nav-link">Entrada</div>
+          <div class="nav-link">Salida</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link active">Historial</div>
+        </div>
+        <div class="user-chip">
+          <div class="user-avatar">AD</div>
+          <span class="user-name">Admin</span>
+        </div>
+      </div>
+      <div class="page-body">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px">
+          <div>
+            <div class="page-title">Historial de Movimientos</div>
+            <div class="page-subtitle">Consulte y filtre todos los registros de entrada y salida</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-outline">📄 Exportar PDF</button>
+            <button class="btn btn-success">📊 Exportar Excel</button>
+          </div>
+        </div>
+
+        <div class="filters-bar">
+          <div class="filter-group">
+            <div class="filter-label">Fecha inicio</div>
+            <input class="filter-input" type="date" value="2025-02-01">
+          </div>
+          <div class="filter-group">
+            <div class="filter-label">Fecha fin</div>
+            <input class="filter-input" type="date" value="2025-02-26">
+          </div>
+          <div class="filter-group">
+            <div class="filter-label">Placa</div>
+            <input class="filter-input" type="text" placeholder="Ej: ABC-123">
+          </div>
+          <div class="filter-group">
+            <div class="filter-label">Tipo vehículo</div>
+            <select class="filter-input" style="min-width:120px">
+              <option>Todos</option>
+              <option>Carro</option>
+              <option>Moto</option>
+              <option>Camión</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" style="align-self:flex-end">🔍 Buscar</button>
+          <button class="btn btn-secondary" style="align-self:flex-end">Limpiar</button>
+        </div>
+
+        <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow)">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Placa</th>
+                <th>Tipo</th>
+                <th>Celda</th>
+                <th>Fecha Entrada</th>
+                <th>Fecha Salida</th>
+                <th>Duración</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>001</td><td><strong>ABC-123</strong></td><td>🚗 Carro</td><td>B-07</td><td>Feb 26 · 09:34 AM</td><td>—</td><td style="color:var(--green);font-weight:600">En curso</td><td><span class="badge badge-orange">Dentro</span></td></tr>
+              <tr><td>002</td><td><strong>XYZ-456</strong></td><td>🏍️ Moto</td><td>M-03</td><td>Feb 26 · 07:15 AM</td><td>Feb 26 · 11:42 AM</td><td>4h 27min</td><td><span class="badge badge-green">Completado</span></td></tr>
+              <tr><td>003</td><td><strong>LMN-789</strong></td><td>🚗 Carro</td><td>A-05</td><td>Feb 25 · 02:00 PM</td><td>Feb 25 · 06:30 PM</td><td>4h 30min</td><td><span class="badge badge-green">Completado</span></td></tr>
+              <tr><td>004</td><td><strong>OPQ-321</strong></td><td>🚛 Camión</td><td>C-01</td><td>Feb 25 · 08:00 AM</td><td>Feb 25 · 05:00 PM</td><td>9h 00min</td><td><span class="badge badge-green">Completado</span></td></tr>
+              <tr><td>005</td><td><strong>RST-654</strong></td><td>🏍️ Moto</td><td>M-07</td><td>Feb 24 · 11:20 AM</td><td>Feb 24 · 01:45 PM</td><td>2h 25min</td><td><span class="badge badge-green">Completado</span></td></tr>
+              <tr><td>006</td><td><strong>UVW-987</strong></td><td>🚗 Carro</td><td>A-02</td><td>Feb 24 · 09:00 AM</td><td>Feb 24 · 12:00 PM</td><td>3h 00min</td><td><span class="badge badge-green">Completado</span></td></tr>
+            </tbody>
+          </table>
+          <div style="padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--gray-100)">
+            <span style="font-size:13px;color:var(--gray-400)">Mostrando 6 de 248 registros</span>
+            <div style="display:flex;gap:6px">
+              <button class="btn btn-secondary" style="padding:8px 14px;font-size:12px">← Anterior</button>
+              <button class="btn btn-primary" style="padding:8px 14px;font-size:12px">Siguiente →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="padding:24px 60px 48px; text-align:center; font-size:13px; color:rgba(255,255,255,0.3)">
+  Mockups — Parqueadero Autos Colombia · Iteración 1 · 2025 · Para incluir en documento Word tomar captura de cada pantalla
+</div>
+
+</body>
+</html>
