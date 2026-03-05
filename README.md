@@ -81,4 +81,5 @@ python run.py
 ## 👤 Autor
 
 **Jonathan Agamez**  
+**Jhan Moreno** 
 Ingeniería de Software — 2026
