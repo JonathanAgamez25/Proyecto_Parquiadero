@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockups Iteración 2 — Parqueadero Autos Colombia</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A3A5C;
+    --blue: #2E6DA4;
+    --blue-light: #EAF2FB;
+    --accent: #3B9EE8;
+    --green: #27AE60;
+    --green-light: #EAFAF1;
+    --red: #E74C3C;
+    --red-light: #FDEDEC;
+    --orange: #F39C12;
+    --orange-light: #FEF9E7;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #94A3B8;
+    --gray-600: #475569;
+    --gray-800: #1E293B;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(26,58,92,0.10);
+    --shadow-lg: 0 8px 40px rgba(26,58,92,0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #0F1B2D; color: var(--gray-800); }
+
+  .page-header { background: linear-gradient(135deg, #0F1B2D 0%, #1A3A5C 100%); padding: 48px 60px 36px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .page-header h1 { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: white; }
+  .page-header p { font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+  .hu-pills { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+  .hu-pill { padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); text-decoration: none; }
+  .hu-pill:hover { background: var(--accent); border-color: var(--accent); color: white; }
+
+  .screens { padding: 48px 60px; display: flex; flex-direction: column; gap: 64px; }
+  .screen-section { display: flex; flex-direction: column; gap: 16px; }
+  .screen-label { display: flex; align-items: center; gap: 12px; }
+  .screen-badge { background: var(--accent); color: white; font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .screen-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: white; }
+  .screen-desc { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  .mockup-frame { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,0.08), var(--shadow-lg); width: 100%; max-width: 1100px; }
+
+  .app-nav { background: var(--navy); padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-icon { width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .brand-name { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: white; }
+  .nav-links { display: flex; gap: 4px; }
+  .nav-link { padding: 8px 16px; border-radius: 8px; font-size: 13px; color: rgba(255,255,255,0.6); cursor: pointer; }
+  .nav-link.active { background: rgba(255,255,255,0.12); color: white; }
+  .user-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 6px 14px 6px 8px; border-radius: 20px; }
+  .user-avatar { width: 26px; height: 26px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; }
+  .user-name { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  .page-body { background: var(--gray-50); padding: 32px; min-height: 520px; }
+  .page-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .page-subtitle { font-size: 13px; color: var(--gray-400); margin-bottom: 28px; }
+
+  .form-card { background: white; border-radius: 12px; padding: 28px; box-shadow: var(--shadow); border: 1px solid var(--gray-200); max-width: 560px; }
+  .form-group { margin-bottom: 18px; }
+  .form-label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .form-input { width: 100%; padding: 12px 16px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 15px; font-family: 'DM Sans', sans-serif; color: var(--gray-800); background: white; outline: none; }
+  .form-input.filled { border-color: var(--navy); background: var(--blue-light); font-weight: 600; }
+  .form-select { width: 100%; padding: 12px 16px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 15px; font-family: 'DM Sans', sans-serif; color: var(--gray-800); background: white; }
+
+  .btn { padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary { background: var(--navy); color: white; }
+  .btn-success { background: var(--green); color: white; }
+  .btn-danger { background: var(--red); color: white; }
+  .btn-warning { background: var(--orange); color: white; }
+  .btn-outline { background: white; color: var(--navy); border: 1.5px solid var(--navy); }
+  .btn-secondary { background: var(--gray-100); color: var(--gray-600); }
+
+  .alert { padding: 14px 18px; border-radius: 10px; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+  .alert-success { background: var(--green-light); color: #1A6B3C; border: 1px solid #A9DFBF; }
+  .alert-error { background: var(--red-light); color: #922B21; border: 1px solid #F1948A; }
+  .alert-info { background: var(--blue-light); color: var(--navy); border: 1px solid #AED6F1; }
+  .alert-warning { background: var(--orange-light); color: #7D5A00; border: 1px solid #FAD7A0; }
+
+  .info-card { background: white; border-radius: 12px; padding: 20px 24px; border: 1.5px solid var(--gray-200); }
+  .info-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .info-card-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .badge { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-red { background: var(--red-light); color: var(--red); }
+  .badge-blue { background: var(--blue-light); color: var(--blue); }
+  .badge-orange { background: var(--orange-light); color: var(--orange); }
+  .badge-gray { background: var(--gray-100); color: var(--gray-400); }
+
+  .info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--gray-100); font-size: 13px; }
+  .info-row:last-child { border-bottom: none; }
+  .info-key { color: var(--gray-400); }
+  .info-val { font-weight: 600; color: var(--gray-800); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  .search-box { display: flex; gap: 10px; max-width: 480px; margin-bottom: 24px; }
+  .search-input { flex: 1; padding: 14px 18px; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; }
+
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th { background: var(--navy); color: white; padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-100); }
+  .data-table tr:nth-child(even) td { background: var(--gray-50); }
+  .data-table tr:hover td { background: var(--blue-light); }
+
+  .toggle-switch { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: 10px; border: 1.5px solid var(--gray-200); }
+  .toggle { width: 44px; height: 24px; border-radius: 12px; position: relative; cursor: pointer; }
+  .toggle.on { background: var(--green); }
+  .toggle.off { background: var(--gray-200); }
+  .toggle::after { content: ''; position: absolute; width: 18px; height: 18px; background: white; border-radius: 50%; top: 3px; transition: left 0.2s; }
+  .toggle.on::after { left: 23px; }
+  .toggle.off::after { left: 3px; }
+
+  .celda-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; }
+  .celda { aspect-ratio: 1; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; cursor: pointer; }
+  .celda.libre { background: var(--green-light); color: var(--green); border: 1.5px solid #A9DFBF; }
+  .celda.ocupado { background: var(--red-light); color: var(--red); border: 1.5px solid #F1948A; }
+  .celda.mantenimiento { background: var(--orange-light); color: var(--orange); border: 1.5px solid #FAD7A0; }
+  .celda.selected { border: 2px solid var(--navy); }
+  .celda-icon { font-size: 16px; margin-bottom: 2px; }
+
+  .section-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+
+  .tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-green { background: var(--green-light); color: var(--green); }
+
+  .divider { border: none; border-top: 1px solid var(--gray-200); margin: 16px 0; }
+
+  .filters-bar { background: white; border-radius: 12px; padding: 16px 20px; border: 1px solid var(--gray-200); display: flex; gap: 12px; align-items: flex-end; margin-bottom: 20px; flex-wrap: wrap; box-shadow: var(--shadow); }
+  .filter-group { display: flex; flex-direction: column; gap: 6px; }
+  .filter-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; }
+  .filter-input { padding: 9px 14px; border: 1.5px solid var(--gray-200); border-radius: 8px; font-size: 13px; font-family: 'DM Sans', sans-serif; outline: none; min-width: 130px; }
+
+  .vehicle-chip { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--gray-50); border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 13px; }
+  .vehicle-chip .remove { color: var(--red); cursor: pointer; font-weight: 700; margin-left: auto; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Mockups Iteración 2 — Parqueadero Autos Colombia</h1>
+  <p>Gestión de Usuarios y Gestión de Celdas · 10 Historias de Usuario</p>
+  <div class="hu-pills">
+    <a href="#hu06" class="hu-pill">HU-06 Registrar Usuario</a>
+    <a href="#hu07" class="hu-pill">HU-07 Consultar Usuario</a>
+    <a href="#hu08" class="hu-pill">HU-08 Actualizar Usuario</a>
+    <a href="#hu09" class="hu-pill">HU-09 Activar/Desactivar</a>
+    <a href="#hu10" class="hu-pill">HU-10 Asociar Vehículo</a>
+    <a href="#hu11" class="hu-pill">HU-11 Historial Pagos</a>
+    <a href="#hu12" class="hu-pill">HU-12 Exportar Reporte</a>
+    <a href="#hu13" class="hu-pill">HU-13 Nueva Celda</a>
+    <a href="#hu14" class="hu-pill">HU-14 Estado Celda</a>
+    <a href="#hu15" class="hu-pill">HU-15 Mantenimiento</a>
+  </div>
+</div>
+
+<div class="screens">
+
+  <!-- HU-06 REGISTRAR USUARIO -->
+  <div class="screen-section" id="hu06">
+    <div class="screen-label">
+      <span class="screen-badge">HU-06</span>
+      <div>
+        <div class="screen-title">Registrar Usuario</div>
+        <div class="screen-desc">Como administrador, quiero registrar un nuevo usuario mensualista con sus datos personales.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link active">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Registrar Nuevo Usuario</div>
+        <div class="page-subtitle">Complete los datos del usuario mensualista</div>
+        <div class="two-col" style="max-width:900px">
+          <div class="form-card">
+            <div class="two-col" style="gap:12px">
+              <div class="form-group">
+                <label class="form-label">Nombre *</label>
+                <input class="form-input filled" type="text" value="Carlos Andrés">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Apellido *</label>
+                <input class="form-input filled" type="text" value="Martínez López">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Número de Documento *</label>
+              <input class="form-input filled" type="text" value="1098765432">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teléfono *</label>
+              <input class="form-input filled" type="text" value="3201234567">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input class="form-input filled" type="text" value="carlos.martinez@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo de Contrato *</label>
+              <select class="form-select">
+                <option>Mensualidad — Carro</option>
+                <option>Mensualidad — Moto</option>
+                <option>Mensualidad — Camión</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn btn-primary">✅ Registrar Usuario</button>
+              <button class="btn btn-secondary">Limpiar</button>
+            </div>
+            <div class="alert alert-success">✅ Usuario registrado exitosamente · ID: USR-045</div>
+          </div>
+          <div>
+            <div class="info-card">
+              <div class="info-card-header"><span class="info-card-title">Resumen del Registro</span><span class="badge badge-green">● Activo</span></div>
+              <div class="info-row"><span class="info-key">Nombre</span><span class="info-val">Carlos A. Martínez</span></div>
+              <div class="info-row"><span class="info-key">Documento</span><span class="info-val">1098765432</span></div>
+              <div class="info-row"><span class="info-key">Teléfono</span><span class="info-val">3201234567</span></div>
+              <div class="info-row"><span class="info-key">Email</span><span class="info-val">carlos.martinez@email.com</span></div>
+              <div class="info-row"><span class="info-key">Contrato</span><span class="info-val">Mensualidad Carro</span></div>
+              <div class="info-row"><span class="info-key">Fecha registro</span><span class="info-val">Hoy, 15 Mar 2026</span></div>
+            </div>
+            <div class="alert alert-error" style="margin-top:12px">⚠️ Ya existe un usuario registrado con este documento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-07 CONSULTAR USUARIO -->
+  <div class="screen-section" id="hu07">
+    <div class="screen-label">
+      <span class="screen-badge">HU-07</span>
+      <div>
+        <div class="screen-title">Consultar Usuario por Documento</div>
+        <div class="screen-desc">Como administrador, quiero buscar un usuario por su documento para ver su información completa.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link active">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Consultar Usuario</div>
+        <div class="page-subtitle">Ingrese el número de documento para buscar un usuario</div>
+        <div class="search-box">
+          <input class="search-input" type="text" value="1098765432" placeholder="Número de documento...">
+          <button class="btn btn-primary">🔍 Buscar</button>
+        </div>
+        <div class="two-col" style="max-width:900px">
+          <div class="info-card" style="border-top:3px solid var(--green)">
+            <div class="info-card-header"><span class="info-card-title">Carlos A. Martínez López</span><span class="badge badge-green">● Activo</span></div>
+            <div class="info-row"><span class="info-key">Documento</span><span class="info-val">1098765432</span></div>
+            <div class="info-row"><span class="info-key">Teléfono</span><span class="info-val">3201234567</span></div>
+            <div class="info-row"><span class="info-key">Email</span><span class="info-val">carlos.martinez@email.com</span></div>
+            <div class="info-row"><span class="info-key">Contrato</span><span class="info-val">Mensualidad Carro</span></div>
+            <div class="info-row"><span class="info-key">Registro</span><span class="info-val">15 Mar 2026</span></div>
+            <hr class="divider">
+            <div class="section-title">Vehículos Asociados</div>
+            <div class="vehicle-chip" style="margin-bottom:8px">🚗 <strong>ABC-123</strong> — Carro · Toyota Corolla</div>
+            <div class="vehicle-chip">🚗 <strong>XYZ-789</strong> — Carro · Mazda 3</div>
+            <div style="display:flex;gap:8px;margin-top:16px">
+              <button class="btn btn-outline" style="font-size:12px;padding:8px 14px">✏️ Editar</button>
+              <button class="btn btn-secondary" style="font-size:12px;padding:8px 14px">💰 Ver Pagos</button>
+            </div>
+          </div>
+          <div class="info-card" style="border-top:3px solid var(--red)">
+            <div class="info-card-header"><span class="info-card-title">Documento: 9999999</span><span class="badge badge-gray">No encontrado</span></div>
+            <div class="alert alert-error" style="margin-top:8px">⚠️ No se encontró ningún usuario con ese documento</div>
+            <div style="font-size:12px;color:var(--gray-400);margin-top:12px;text-align:center">Verifique el número ingresado o registre un nuevo usuario.</div>
+            <button class="btn btn-primary" style="margin-top:16px;font-size:12px;width:100%">+ Registrar Nuevo Usuario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-08 ACTUALIZAR DATOS -->
+  <div class="screen-section" id="hu08">
+    <div class="screen-label">
+      <span class="screen-badge">HU-08</span>
+      <div>
+        <div class="screen-title">Actualizar Datos de Usuario</div>
+        <div class="screen-desc">Como administrador, quiero actualizar los datos de contacto de un usuario existente.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link active">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Actualizar Datos de Usuario</div>
+        <div class="page-subtitle">Modifique los datos del usuario — El documento de identidad no puede cambiarse</div>
+        <div class="two-col" style="max-width:900px">
+          <div class="form-card">
+            <div class="alert alert-info" style="margin-top:0;margin-bottom:20px">📋 Editando: <strong>Carlos A. Martínez López</strong> · Doc: 1098765432</div>
+            <div class="two-col" style="gap:12px">
+              <div class="form-group">
+                <label class="form-label">Nombre *</label>
+                <input class="form-input filled" type="text" value="Carlos Andrés">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Apellido *</label>
+                <input class="form-input filled" type="text" value="Martínez López">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Documento (no editable)</label>
+              <input class="form-input" type="text" value="1098765432" disabled style="background:var(--gray-100);color:var(--gray-400);cursor:not-allowed">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teléfono *</label>
+              <input class="form-input filled" type="text" value="3209876543">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input class="form-input filled" type="text" value="carlos.nuevo@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo de Contrato</label>
+              <select class="form-select"><option>Mensualidad — Carro</option></select>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn btn-primary">💾 Guardar Cambios</button>
+              <button class="btn btn-secondary">Cancelar</button>
+            </div>
+            <div class="alert alert-success">✅ Datos actualizados correctamente · 15 Mar 2026 · 10:22 AM</div>
+          </div>
+          <div>
+            <div class="info-card">
+              <div class="info-card-title" style="margin-bottom:12px">Registro de Cambios</div>
+              <div style="font-size:12px;color:var(--gray-400);margin-bottom:8px">Últimas modificaciones</div>
+              <div style="padding:10px;background:var(--gray-50);border-radius:8px;margin-bottom:8px;font-size:12px">
+                <div style="font-weight:600;color:var(--navy)">15 Mar 2026 · 10:22 AM</div>
+                <div style="color:var(--gray-600);margin-top:4px">Teléfono actualizado · Admin</div>
+              </div>
+              <div style="padding:10px;background:var(--gray-50);border-radius:8px;font-size:12px">
+                <div style="font-weight:600;color:var(--navy)">10 Feb 2026 · 09:15 AM</div>
+                <div style="color:var(--gray-600);margin-top:4px">Email actualizado · Admin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-09 ACTIVAR/DESACTIVAR -->
+  <div class="screen-section" id="hu09">
+    <div class="screen-label">
+      <span class="screen-badge">HU-09</span>
+      <div>
+        <div class="screen-title">Activar / Desactivar Usuario</div>
+        <div class="screen-desc">Como administrador, quiero cambiar el estado de un usuario sin eliminar su historial.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link active">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Gestión de Estado de Usuarios</div>
+        <div class="page-subtitle">Active o desactive usuarios del servicio de mensualidad</div>
+        <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow);max-width:900px">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>Documento</th>
+                <th>Contrato</th>
+                <th>Vehículos</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Carlos A. Martínez</strong></td>
+                <td>1098765432</td>
+                <td>Mensualidad Carro</td>
+                <td>2</td>
+                <td><span class="badge badge-green">● Activo</span></td>
+                <td>
+                  <div class="toggle on"></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>María J. Rodríguez</strong></td>
+                <td>1023456789</td>
+                <td>Mensualidad Moto</td>
+                <td>1</td>
+                <td><span class="badge badge-red">● Inactivo</span></td>
+                <td>
+                  <div class="toggle off"></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pedro L. Gómez</strong></td>
+                <td>1087654321</td>
+                <td>Mensualidad Carro</td>
+                <td>1</td>
+                <td><span class="badge badge-green">● Activo</span></td>
+                <td>
+                  <div class="toggle on"></div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Ana M. Torres</strong></td>
+                <td>1034567890</td>
+                <td>Mensualidad Camión</td>
+                <td>1</td>
+                <td><span class="badge badge-green">● Activo</span></td>
+                <td>
+                  <div class="toggle on"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-warning" style="max-width:900px;margin-top:16px">⚠️ ¿Desea desactivar a <strong>Carlos A. Martínez</strong>? Esta acción no eliminará su historial. <button class="btn btn-danger" style="padding:6px 14px;font-size:12px;margin-left:12px">Confirmar</button> <button class="btn btn-secondary" style="padding:6px 14px;font-size:12px;margin-left:6px">Cancelar</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-10 ASOCIAR VEHÍCULO -->
+  <div class="screen-section" id="hu10">
+    <div class="screen-label">
+      <span class="screen-badge">HU-10</span>
+      <div>
+        <div class="screen-title">Asociar Vehículo a Usuario</div>
+        <div class="screen-desc">Como administrador, quiero vincular vehículos a un usuario mensualista registrado.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link active">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Asociar Vehículo a Usuario</div>
+        <div class="page-subtitle">Vincule uno o más vehículos al usuario mensualista</div>
+        <div class="two-col" style="max-width:900px">
+          <div>
+            <div class="info-card" style="margin-bottom:16px;border-top:3px solid var(--navy)">
+              <div class="info-card-header"><span class="info-card-title">Carlos A. Martínez López</span><span class="badge badge-green">● Activo</span></div>
+              <div class="info-row"><span class="info-key">Documento</span><span class="info-val">1098765432</span></div>
+              <div class="info-row"><span class="info-key">Contrato</span><span class="info-val">Mensualidad Carro</span></div>
+            </div>
+            <div class="form-card" style="max-width:100%">
+              <div class="section-title">Agregar Nuevo Vehículo</div>
+              <div class="form-group">
+                <label class="form-label">Placa *</label>
+                <input class="form-input filled" type="text" value="DEF-456">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tipo *</label>
+                <select class="form-select"><option>🚗 Carro</option></select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Marca / Modelo</label>
+                <input class="form-input" type="text" placeholder="Ej: Honda Civic">
+              </div>
+              <button class="btn btn-primary" style="width:100%">🔗 Asociar Vehículo</button>
+              <div class="alert alert-success">✅ Vehículo DEF-456 asociado correctamente</div>
+            </div>
+          </div>
+          <div>
+            <div class="section-title" style="color:white">Vehículos Asociados (3)</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div class="vehicle-chip"><span>🚗</span><div><strong>ABC-123</strong><div style="font-size:11px;color:var(--gray-400)">Toyota Corolla · Carro</div></div><span class="remove">✕</span></div>
+              <div class="vehicle-chip"><span>🚗</span><div><strong>XYZ-789</strong><div style="font-size:11px;color:var(--gray-400)">Mazda 3 · Carro</div></div><span class="remove">✕</span></div>
+              <div class="vehicle-chip" style="border-color:var(--green);background:var(--green-light)"><span>🚗</span><div><strong>DEF-456</strong><div style="font-size:11px;color:var(--green)">Honda Civic · Nuevo</div></div><span class="remove" style="color:var(--gray-400)">✕</span></div>
+            </div>
+            <div class="alert alert-error" style="margin-top:12px">⚠️ La placa GHI-000 ya está asociada a otro usuario</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-11 HISTORIAL PAGOS -->
+  <div class="screen-section" id="hu11">
+    <div class="screen-label">
+      <span class="screen-badge">HU-11</span>
+      <div>
+        <div class="screen-title">Ver Historial de Pagos</div>
+        <div class="screen-desc">Como administrador, quiero consultar el historial de pagos de un usuario con filtros.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link active">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px">
+          <div>
+            <div class="page-title">Historial de Pagos</div>
+            <div class="page-subtitle">Carlos A. Martínez López · Doc: 1098765432</div>
+          </div>
+          <button class="btn btn-outline">📄 Exportar Reporte</button>
+        </div>
+        <div class="three-col" style="max-width:900px;margin-bottom:20px">
+          <div style="background:white;border-radius:12px;padding:16px 20px;border:1px solid var(--gray-200);text-align:center">
+            <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;font-weight:600">Total Pagado</div>
+            <div style="font-size:24px;font-weight:700;color:var(--green);margin-top:4px">$540.000</div>
+          </div>
+          <div style="background:white;border-radius:12px;padding:16px 20px;border:1px solid var(--gray-200);text-align:center">
+            <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;font-weight:600">Saldo Pendiente</div>
+            <div style="font-size:24px;font-weight:700;color:var(--red);margin-top:4px">$180.000</div>
+          </div>
+          <div style="background:white;border-radius:12px;padding:16px 20px;border:1px solid var(--gray-200);text-align:center">
+            <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;font-weight:600">Meses Registrados</div>
+            <div style="font-size:24px;font-weight:700;color:var(--navy);margin-top:4px">4</div>
+          </div>
+        </div>
+        <div class="filters-bar" style="max-width:900px">
+          <div class="filter-group"><div class="filter-label">Fecha inicio</div><input class="filter-input" type="date" value="2026-01-01"></div>
+          <div class="filter-group"><div class="filter-label">Fecha fin</div><input class="filter-input" type="date" value="2026-03-15"></div>
+          <div class="filter-group"><div class="filter-label">Estado</div><select class="filter-input"><option>Todos</option><option>Pagado</option><option>Pendiente</option></select></div>
+          <button class="btn btn-primary">🔍 Filtrar</button>
+        </div>
+        <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-200);max-width:900px">
+          <table class="data-table">
+            <thead><tr><th>#</th><th>Periodo</th><th>Fecha Pago</th><th>Monto</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>001</td><td>Enero 2026</td><td>05 Ene 2026</td><td>$180.000</td><td><span class="badge badge-green">Pagado</span></td></tr>
+              <tr><td>002</td><td>Febrero 2026</td><td>03 Feb 2026</td><td>$180.000</td><td><span class="badge badge-green">Pagado</span></td></tr>
+              <tr><td>003</td><td>Marzo 2026</td><td>01 Mar 2026</td><td>$180.000</td><td><span class="badge badge-green">Pagado</span></td></tr>
+              <tr><td>004</td><td>Abril 2026</td><td>—</td><td>$180.000</td><td><span class="badge badge-red">Pendiente</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-12 EXPORTAR REPORTE -->
+  <div class="screen-section" id="hu12">
+    <div class="screen-label">
+      <span class="screen-badge">HU-12</span>
+      <div>
+        <div class="screen-title">Exportar Reporte de Pagos</div>
+        <div class="screen-desc">Como administrador, quiero exportar el historial de pagos en PDF o Excel.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link">Usuarios</div>
+          <div class="nav-link">Celdas</div>
+          <div class="nav-link active">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Exportar Reporte de Pagos</div>
+        <div class="page-subtitle">Genere el reporte del historial de pagos para entregar al cliente</div>
+        <div class="two-col" style="max-width:900px">
+          <div class="form-card">
+            <div class="section-title">Configurar Exportación</div>
+            <div class="form-group">
+              <label class="form-label">Usuario</label>
+              <input class="form-input filled" type="text" value="Carlos A. Martínez · 1098765432" disabled>
+            </div>
+            <div class="two-col" style="gap:12px">
+              <div class="form-group">
+                <label class="form-label">Periodo Desde</label>
+                <input class="form-input" type="date" value="2026-01-01">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Periodo Hasta</label>
+                <input class="form-input" type="date" value="2026-03-15">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Formato de Exportación</label>
+              <select class="form-select">
+                <option>📄 PDF — Para impresión y entrega al cliente</option>
+                <option>📊 Excel — Para análisis y contabilidad</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn btn-danger">📄 Exportar PDF</button>
+              <button class="btn btn-success">📊 Exportar Excel</button>
+            </div>
+            <div class="alert alert-success">✅ Archivo generado: Carlos_Martinez_Pagos_Mar2026.pdf</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-title" style="margin-bottom:12px">Vista Previa del Reporte</div>
+            <div style="background:var(--gray-50);border-radius:8px;padding:16px;border:1px solid var(--gray-200);font-size:12px">
+              <div style="font-weight:700;color:var(--navy);margin-bottom:8px">PARQUEADERO AUTOS COLOMBIA</div>
+              <div style="color:var(--gray-600)">Reporte de Pagos — Carlos A. Martínez</div>
+              <div style="color:var(--gray-400);font-size:11px">Doc: 1098765432 · Periodo: Ene-Mar 2026</div>
+              <hr class="divider">
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:11px">
+                <div style="font-weight:600;color:var(--gray-600)">Periodo</div>
+                <div style="font-weight:600;color:var(--gray-600)">Fecha</div>
+                <div style="font-weight:600;color:var(--gray-600)">Estado</div>
+                <div>Enero 2026</div><div>05 Ene</div><div style="color:var(--green)">Pagado</div>
+                <div>Febrero 2026</div><div>03 Feb</div><div style="color:var(--green)">Pagado</div>
+                <div>Marzo 2026</div><div>01 Mar</div><div style="color:var(--green)">Pagado</div>
+                <div>Abril 2026</div><div>—</div><div style="color:var(--red)">Pendiente</div>
+              </div>
+              <hr class="divider">
+              <div style="display:flex;justify-content:space-between;font-weight:700">
+                <span>Total pagado:</span><span style="color:var(--green)">$540.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-13 REGISTRAR CELDA -->
+  <div class="screen-section" id="hu13">
+    <div class="screen-label">
+      <span class="screen-badge">HU-13</span>
+      <div>
+        <div class="screen-title">Registrar Nueva Celda</div>
+        <div class="screen-desc">Como administrador, quiero registrar una nueva celda indicando número, zona y tipo de vehículo.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link">Usuarios</div>
+          <div class="nav-link active">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Registrar Nueva Celda</div>
+        <div class="page-subtitle">Agregue una nueva celda al inventario del parqueadero</div>
+        <div class="two-col" style="max-width:900px">
+          <div class="form-card">
+            <div class="form-group">
+              <label class="form-label">Número de Celda *</label>
+              <input class="form-input filled" type="text" value="C-11">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Zona *</label>
+              <select class="form-select">
+                <option>Zona A — Carros</option>
+                <option>Zona B — Carros</option>
+                <option selected>Zona C — Carros</option>
+                <option>Zona M — Motos</option>
+                <option>Zona T — Camiones</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo de Vehículo Permitido *</label>
+              <select class="form-select">
+                <option selected>🚗 Carro</option>
+                <option>🏍️ Moto</option>
+                <option>🚛 Camión</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Observación (opcional)</label>
+              <input class="form-input" type="text" placeholder="Ej: Celda ampliada para SUV">
+            </div>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn btn-primary">✅ Registrar Celda</button>
+              <button class="btn btn-secondary">Limpiar</button>
+            </div>
+            <div class="alert alert-success">✅ Celda C-11 registrada · Estado: LIBRE</div>
+            <div class="alert alert-error">⚠️ El número C-11 ya existe en la Zona C</div>
+          </div>
+          <div>
+            <div class="info-card">
+              <div class="info-card-header"><span class="info-card-title">Resumen de la Celda</span><span class="badge badge-green">● Libre</span></div>
+              <div class="info-row"><span class="info-key">Número</span><span class="info-val">C-11</span></div>
+              <div class="info-row"><span class="info-key">Zona</span><span class="info-val">Zona C — Carros</span></div>
+              <div class="info-row"><span class="info-key">Tipo permitido</span><span class="info-val">🚗 Carro</span></div>
+              <div class="info-row"><span class="info-key">Estado inicial</span><span class="info-val" style="color:var(--green)">LIBRE</span></div>
+              <div class="info-row"><span class="info-key">Fecha registro</span><span class="info-val">15 Mar 2026</span></div>
+            </div>
+            <div class="alert alert-info" style="margin-top:12px">ℹ️ Total celdas registradas: <strong>41</strong> · Libres: <strong>24</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-14 CONSULTAR ESTADO CELDA -->
+  <div class="screen-section" id="hu14">
+    <div class="screen-label">
+      <span class="screen-badge">HU-14</span>
+      <div>
+        <div class="screen-title">Consultar Estado de Celda</div>
+        <div class="screen-desc">Como administrador u operario, quiero consultar el estado actual de una celda específica.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link">Usuarios</div>
+          <div class="nav-link active">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">OP</div><span class="user-name">Operario</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Consultar Estado de Celda</div>
+        <div class="page-subtitle">Busque por número de celda o zona para ver su estado actual</div>
+        <div class="search-box">
+          <input class="search-input" type="text" value="B-07" placeholder="Número de celda...">
+          <select class="filter-input" style="min-width:140px">
+            <option>Todas las zonas</option>
+            <option>Zona A</option>
+            <option>Zona B</option>
+            <option>Zona M</option>
+          </select>
+          <button class="btn btn-primary">🔍 Buscar</button>
+        </div>
+        <div class="three-col" style="max-width:900px">
+          <div class="info-card" style="border-top:3px solid var(--red)">
+            <div class="info-card-header"><span class="info-card-title">B-07</span><span class="badge badge-red">● Ocupado</span></div>
+            <div style="font-size:36px;text-align:center;margin:12px 0">🚗</div>
+            <div class="info-row"><span class="info-key">Zona</span><span class="info-val">Zona B</span></div>
+            <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">Carro</span></div>
+            <div class="info-row"><span class="info-key">Placa</span><span class="info-val" style="color:var(--navy);font-weight:700">ABC-123</span></div>
+            <div class="info-row"><span class="info-key">Entrada</span><span class="info-val">09:34 AM</span></div>
+            <div class="info-row"><span class="info-key">Tiempo</span><span class="info-val" style="color:var(--red)">2h 18min</span></div>
+          </div>
+          <div class="info-card" style="border-top:3px solid var(--green)">
+            <div class="info-card-header"><span class="info-card-title">A-03</span><span class="badge badge-green">● Libre</span></div>
+            <div style="font-size:36px;text-align:center;margin:12px 0">🚗</div>
+            <div class="info-row"><span class="info-key">Zona</span><span class="info-val">Zona A</span></div>
+            <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">Carro</span></div>
+            <div class="info-row"><span class="info-key">Última placa</span><span class="info-val">LMN-789</span></div>
+            <div class="info-row"><span class="info-key">Última salida</span><span class="info-val">Ayer 06:30 PM</span></div>
+            <div class="info-row"><span class="info-key">Disponible</span><span class="info-val" style="color:var(--green)">Sí</span></div>
+          </div>
+          <div class="info-card" style="border-top:3px solid var(--orange)">
+            <div class="info-card-header"><span class="info-card-title">M-05</span><span class="badge badge-orange">● Mantenimiento</span></div>
+            <div style="font-size:36px;text-align:center;margin:12px 0">🔧</div>
+            <div class="info-row"><span class="info-key">Zona</span><span class="info-val">Zona M</span></div>
+            <div class="info-row"><span class="info-key">Tipo</span><span class="info-val">Moto</span></div>
+            <div class="info-row"><span class="info-key">Motivo</span><span class="info-val">Piso dañado</span></div>
+            <div class="info-row"><span class="info-key">Desde</span><span class="info-val">14 Mar 2026</span></div>
+            <div class="info-row"><span class="info-key">Disponible</span><span class="info-val" style="color:var(--red)">No</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HU-15 DESHABILITAR CELDA -->
+  <div class="screen-section" id="hu15">
+    <div class="screen-label">
+      <span class="screen-badge">HU-15</span>
+      <div>
+        <div class="screen-title">Deshabilitar Celda por Mantenimiento</div>
+        <div class="screen-desc">Como administrador, quiero deshabilitar temporalmente una celda para que no sea asignada.</div>
+      </div>
+    </div>
+    <div class="mockup-frame">
+      <div class="app-nav">
+        <div class="brand"><div class="brand-icon">🚗</div><span class="brand-name">Autos Colombia</span></div>
+        <div class="nav-links">
+          <div class="nav-link">Usuarios</div>
+          <div class="nav-link active">Celdas</div>
+          <div class="nav-link">Pagos</div>
+          <div class="nav-link">Entrada/Salida</div>
+        </div>
+        <div class="user-chip"><div class="user-avatar">AD</div><span class="user-name">Admin</span></div>
+      </div>
+      <div class="page-body">
+        <div class="page-title">Gestión de Mantenimiento de Celdas</div>
+        <div class="page-subtitle">Deshabilite celdas temporalmente para mantenimiento — Solo celdas con estado LIBRE</div>
+        <div class="two-col" style="max-width:900px">
+          <div>
+            <div class="section-title" style="color:white;margin-bottom:12px">Mapa de Celdas — Zona M (Motos)</div>
+            <div class="celda-grid" style="grid-template-columns:repeat(5,1fr);margin-bottom:16px">
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-01</div></div>
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-02</div></div>
+              <div class="celda ocupado"><div class="celda-icon">🏍️</div><div>M-03</div></div>
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-04</div></div>
+              <div class="celda mantenimiento selected"><div class="celda-icon">🔧</div><div>M-05</div></div>
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-06</div></div>
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-07</div></div>
+              <div class="celda ocupado"><div class="celda-icon">🏍️</div><div>M-08</div></div>
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-09</div></div>
+              <div class="celda libre"><div class="celda-icon">🏍️</div><div>M-10</div></div>
+            </div>
+            <div style="display:flex;gap:12px;font-size:12px;color:rgba(255,255,255,0.5)">
+              <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;background:var(--green-light);border:1px solid #A9DFBF;border-radius:3px"></div>Libre</div>
+              <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;background:var(--red-light);border:1px solid #F1948A;border-radius:3px"></div>Ocupado</div>
+              <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;background:var(--orange-light);border:1px solid #FAD7A0;border-radius:3px"></div>Mantenimiento</div>
+            </div>
+          </div>
+          <div class="form-card" style="max-width:100%">
+            <div class="info-card-header" style="margin-bottom:16px">
+              <span class="info-card-title">Celda M-05 seleccionada</span>
+              <span class="badge badge-orange">● Mantenimiento</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Motivo del Mantenimiento *</label>
+              <input class="form-input filled" type="text" value="Piso dañado — requiere reparación">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Fecha estimada de habilitación</label>
+              <input class="form-input" type="date" value="2026-03-20">
+            </div>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn btn-warning">🔧 Deshabilitar Celda</button>
+              <button class="btn btn-success">✅ Rehabilitar Celda</button>
+            </div>
+            <div class="alert alert-warning" style="margin-top:12px">⚠️ Esta celda no será asignada automáticamente mientras esté en mantenimiento.</div>
+            <div class="alert alert-error">❌ No se puede deshabilitar una celda ocupada. Espere a que el vehículo salga.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="padding:24px 60px 48px;text-align:center;font-size:13px;color:rgba(255,255,255,0.3)">
+  Mockups Iteración 2 — Parqueadero Autos Colombia · Gestión de Usuarios y Celdas · 2026
+</div>
+
+</body>
+</html>
