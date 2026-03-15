@@ -1,15 +1,13 @@
 # 🚗 Parqueadero Autos Colombia
 
-Sistema de gestión de entrada y salida de vehículos para el parqueadero "Autos Colombia". 
+Sistema de gestión de entrada y salida de vehículos para el parqueadero "Autos Colombia".
 Desarrollado como proyecto académico en la asignatura de Ingeniería de Software.
 
 ---
 
 ## 📋 Descripción
 
-El sistema permite registrar y controlar el ingreso y salida de vehículos, 
-asignar celdas automáticamente, visualizar el estado del parqueadero en tiempo 
-real y consultar el historial de movimientos.
+El sistema permite registrar y controlar el ingreso y salida de vehículos, asignar celdas automáticamente, visualizar el estado del parqueadero en tiempo real, gestionar usuarios mensualistas y administrar las celdas del parqueadero.
 
 ---
 
@@ -27,19 +25,28 @@ real y consultar el historial de movimientos.
 ## 📁 Estructura del Proyecto
 ```
 Proyecto_Parquiadero/
-├── Taller_AutosColombia_Iteracion1.docx   # Documento del taller
-├── mockups_parqueadero.html               # Mockups interactivos
-├── Modelo Físico — el SQL.sql             # Script DDL base de datos
-├── Arquitectura del Sistema.drawio.png    # Diagrama de arquitectura
-├── Casos de Uso drawio.png                # Diagrama de casos de uso
-├── MR — las tablas con llaves.png         # Modelo relacional
-├── paquetes.drawio.png                    # Diagrama de paquetes
+├── Iteracion_1/
+│   ├── Taller_AutosColombia_Iteracion1.docx
+│   ├── mockups_parqueadero.html
+│   ├── Arquitectura del Sistema.drawio.png
+│   ├── Casos de Uso drawio.png
+│   ├── MR — las tablas con llaves.png
+│   ├── Modelo Físico — el SQL.sql
+│   └── paquetes.drawio.png
+├── Iteracion_2/
+│   ├── Taller_AutosColombia_Iteracion2.docx
+│   ├── mockups_iteracion2.html
+│   ├── diagramas_secuencia.html
+│   ├── diagrama_componentes.html
+│   └── casos_de_uso_iteracion2.png
 └── README.md
 ```
 
 ---
 
-## 🗂️ Entregables Iteración 1
+## 🗂️ Entregables
+
+### Iteración 1 — Gestión de Entrada y Salida de Vehículos
 
 | # | Entregable | Estado |
 |---|-----------|--------|
@@ -51,6 +58,19 @@ Proyecto_Parquiadero/
 | 6 | Diagrama de Casos de Uso | ✅ |
 | 7 | Diagrama de Clases | ✅ |
 | 8 | Diagrama de Paquetes | ✅ |
+
+### Iteración 2 — Gestión de Usuarios y Gestión de Celdas
+
+| # | Entregable | Estado |
+|---|-----------|--------|
+| 1 | Requerimientos funcionales y no funcionales | ✅ |
+| 2 | Diagrama de Casos de Uso | ✅ |
+| 3 | Historias de usuario | ✅ |
+| 4 | Mockups | ✅ |
+| 5 | Diagramas de Secuencia | ✅ |
+| 6 | Diagrama de Componentes | ✅ |
+| 7 | Plan de Pruebas | ✅ |
+| 8 | URL Repositorio GitHub | ✅ |
 
 ---
 
@@ -66,9 +86,9 @@ git clone https://github.com/JonathanAgamez25/Proyecto_Parquiadero.git
 pip install -r requirements.txt
 ```
 
-3. Configura la base de datos ejecutando el script:
+3. Configura la base de datos:
 ```bash
-mysql -u root -p < "Modelo Físico — el SQL.sql"
+mysql -u root -p < "Iteracion_1/Modelo Físico — el SQL.sql"
 ```
 
 4. Ejecuta la aplicación:
@@ -78,8 +98,7 @@ python run.py
 
 ---
 
-## 👤 Autor
+## 👤 Autores
 
-**Jonathan Agamez**  
-**Jhan Moreno** 
-Ingeniería de Software — 2026
+**Jonatan Dair Ávila Agámez-Jhan Camilo Moreno**
+Ingeniería de Software — IU Digital de Antioquia — 2026
