@@ -1,0 +1,130 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="Página-1" id="zu1kS_fWPLXfC1CssgUC">
+    <mxGraphModel dx="1066" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f3460;strokeColor=#00b4d8;fontColor=#ffffff;fontStyle=1;fontSize=14;" value="Diagrama de Componentes — Sistema Parqueadero Autos Colombia Component Diagram · Patrón MVC en Capas · Iteraciones 1, 2 y 3" vertex="1">
+          <mxGeometry height="55" width="1080" x="30" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9f9f9;strokeColor=#999999;fontSize=9;" value="" vertex="1">
+          <mxGeometry height="34" width="1080" x="30" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#00b4d8;fontColor=#00b4d8;fontSize=8;fontStyle=1;arcSize=30;" value="Iter 1 — Entrada/Salida" vertex="1">
+          <mxGeometry height="20" width="160" x="44" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#4caf50;fontColor=#c5e1a5;fontSize=8;fontStyle=1;arcSize=30;" value="Iter 2 — Usuarios/Auth" vertex="1">
+          <mxGeometry height="20" width="160" x="218" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=8;fontStyle=1;arcSize=30;" value="Iter 3 — Pagos" vertex="1">
+          <mxGeometry height="20" width="160" x="392" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontSize=8;fontStyle=1;arcSize=30;" value="Transversal" vertex="1">
+          <mxGeometry height="20" width="160" x="566" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#00b4d8;fontColor=#00b4d8;fontStyle=1;fontSize=13;verticalAlign=top;opacity=90;" value="«component»  Presentación" vertex="1">
+          <mxGeometry height="160" width="1080" x="30" y="126" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#16213e;strokeColor=#00b4d8;fontColor=#ffffff;fontSize=10;fontStyle=0;arcSize=20;" value="vistas.entrada vistas.salida vistas.celda vistas.historial" vertex="1">
+          <mxGeometry height="88" width="220" x="55" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#4caf50;fontColor=#c5e1a5;fontSize=10;fontStyle=0;arcSize=20;" value="vistas.login vistas.usuarios vistas.perfil" vertex="1">
+          <mxGeometry height="88" width="220" x="299" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=10;fontStyle=0;arcSize=20;" value="vistas.pago vistas.tarifa vistas.recibo vistas.reporte_caja" vertex="1">
+          <mxGeometry height="88" width="220" x="543" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontColor=#aaaaaa;" value="Interfaces: Formulario Entrada · Login · Formulario Pago · Mapa de Celdas · Reportes" vertex="1">
+          <mxGeometry height="16" width="900" x="55" y="264" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" style="endArrow=open;endFill=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#00b4d8;strokeWidth=1.5;dashed=0;fontSize=9;fontColor=#444444;fontStyle=2;" value="&lt;&lt;uses&gt;&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="286" as="sourcePoint" />
+            <mxPoint x="575" y="314" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#4caf50;fontColor=#80ff80;fontStyle=1;fontSize=13;verticalAlign=top;opacity=90;" value="«component»  Negocio (Business Logic)" vertex="1">
+          <mxGeometry height="165" width="1080" x="30" y="324" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#00b4d8;fontColor=#ffffff;fontSize=10;fontStyle=0;arcSize=20;" value="GestorEntradaSalida GestorCeldas GestorReportes" vertex="1">
+          <mxGeometry height="95" width="220" x="55" y="364" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#4caf50;fontColor=#c5e1a5;fontSize=10;fontStyle=0;arcSize=20;" value="AuthService GestorUsuarios RolService" vertex="1">
+          <mxGeometry height="95" width="220" x="299" y="364" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=10;fontStyle=0;arcSize=20;" value="GestorPagos GestorTarifas ReciboService ReporteExporter" vertex="1">
+          <mxGeometry height="95" width="220" x="543" y="364" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontColor=#aaaaaa;" value="Reglas: validar placas · autenticar usuarios · calcular montos · generar recibos · orquestar flujos entre capas" vertex="1">
+          <mxGeometry height="16" width="980" x="55" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" style="endArrow=open;endFill=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#00b4d8;strokeWidth=1.5;dashed=0;fontSize=9;fontColor=#444444;fontStyle=2;" value="&lt;&lt;uses&gt;&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="489" as="sourcePoint" />
+            <mxPoint x="575" y="517" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a1a3a;strokeColor=#9c27b0;fontColor=#ce93d8;fontStyle=1;fontSize=13;verticalAlign=top;opacity=90;" value="«component»  Acceso a Datos (DAO Layer)" vertex="1">
+          <mxGeometry height="150" width="1080" x="30" y="527" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a1a3a;strokeColor=#00b4d8;fontColor=#ffffff;fontSize=10;fontStyle=0;arcSize=20;" value="VehiculoDAO CeldaDAO MovimientoDAO NovedadDAO ConexionDB" vertex="1">
+          <mxGeometry height="82" width="220" x="55" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#4caf50;fontColor=#c5e1a5;fontSize=10;fontStyle=0;arcSize=20;" value="UsuarioDAO RolDAO" vertex="1">
+          <mxGeometry height="82" width="220" x="299" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=10;fontStyle=0;arcSize=20;" value="PagoDAO TarifaDAO AuditLogDAO" vertex="1">
+          <mxGeometry height="82" width="220" x="543" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontColor=#aaaaaa;" value="Patrón DAO · SQLAlchemy ORM · Consultas SQL parametrizadas · Gestión de conexión" vertex="1">
+          <mxGeometry height="16" width="900" x="55" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" style="endArrow=open;endFill=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#00b4d8;strokeWidth=1.5;dashed=0;fontSize=9;fontColor=#444444;fontStyle=2;" value="&lt;&lt;uses&gt;&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="677" as="sourcePoint" />
+            <mxPoint x="575" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3a1a1a;strokeColor=#f44336;fontColor=#ff8a80;fontStyle=1;fontSize=13;verticalAlign=top;opacity=90;" value="«database»  Base de Datos — MySQL 8.0" vertex="1">
+          <mxGeometry height="140" width="1080" x="30" y="715" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3a1a1a;strokeColor=#f44336;fontColor=#ff8a80;fontSize=10;fontStyle=0;arcSize=20;" value="vehiculo celda movimiento novedad" vertex="1">
+          <mxGeometry height="72" width="220" x="55" y="753" as="geometry" />
+        </mxCell>
+        <mxCell id="28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a3a1a;strokeColor=#4caf50;fontColor=#c5e1a5;fontSize=10;fontStyle=0;arcSize=20;" value="usuario rol sesion" vertex="1">
+          <mxGeometry height="72" width="220" x="299" y="753" as="geometry" />
+        </mxCell>
+        <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=10;fontStyle=0;arcSize=20;" value="pago tarifa audit_log" vertex="1">
+          <mxGeometry height="72" width="220" x="543" y="753" as="geometry" />
+        </mxCell>
+        <mxCell id="30" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontColor=#aaaaaa;" value="Persistencia · Integridad referencial · Llaves primarias y foráneas · Backups automáticos" vertex="1">
+          <mxGeometry height="16" width="900" x="55" y="833" as="geometry" />
+        </mxCell>
+        <mxCell id="31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontStyle=1;fontSize=13;verticalAlign=top;opacity=90;dashed=1;dashPattern=8 4;" value="Servicios Transversales (disponibles para todas las capas)" vertex="1">
+          <mxGeometry height="80" width="1080" x="30" y="893" as="geometry" />
+        </mxCell>
+        <mxCell id="32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontSize=10;fontStyle=0;arcSize=20;" value="AuthService" vertex="1">
+          <mxGeometry height="30" width="130" x="55" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontSize=10;fontStyle=0;arcSize=20;" value="LogService" vertex="1">
+          <mxGeometry height="30" width="130" x="199" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontSize=10;fontStyle=0;arcSize=20;" value="NotificacionService" vertex="1">
+          <mxGeometry height="30" width="130" x="343" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontSize=10;fontStyle=0;arcSize=20;" value="Validator" vertex="1">
+          <mxGeometry height="30" width="130" x="487" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2a2a0a;strokeColor=#f0a500;fontColor=#ffe082;fontSize=10;fontStyle=0;arcSize=20;" value="DateUtils" vertex="1">
+          <mxGeometry height="30" width="130" x="631" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=10;fontStyle=0;arcSize=20;" value="ReciboService" vertex="1">
+          <mxGeometry height="30" width="130" x="775" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a3a;strokeColor=#29b6f6;fontColor=#b3e5fc;fontSize=10;fontStyle=0;arcSize=20;" value="AuditLog" vertex="1">
+          <mxGeometry height="30" width="130" x="919" y="923" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
